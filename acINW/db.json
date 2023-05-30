@@ -1,0 +1,25 @@
+{
+    "produtos": [
+    {
+    "id": 1,
+    "descricao": "Maquina de lavar",
+    "estoque": 10,
+    "valor": 10,
+    "imagem": "assets/maquinadelavar.jpg"
+    },
+    {
+    "id": 2,
+    "descricao": "airfryer",
+    "estoque": 10,
+    "valor": 15,
+    "imagem" : "assets/airfryer.jpg"
+    },
+    {
+    "id": 3,
+    "descricao": "liquidificador",
+    "estoque": 10,
+    "valor": 5.25,
+    "imagem" : "assets/liquidificador.jpg"
+    }
+    ]
+   }
