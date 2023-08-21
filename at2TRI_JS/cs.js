@@ -52,7 +52,6 @@ while (opcaoMenuPrincipal != "2") {
                 let novaDescricao = leia("Digite a nova descrição: ");
                 cod.push(novoCodigo);
                 descricao.push(novaDescricao);
-                valor.push(parseFloat(leia("Digite o valor: ")));
                 movimento.push(0);
                 console.log("Novo registro cadastrado com sucesso!");
             } else if (opcaoSubMenu == "4") {
