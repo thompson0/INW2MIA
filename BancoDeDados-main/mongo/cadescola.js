@@ -1,4 +1,3 @@
-// configura a conexão com o mongodb e o banco de dados
 
 const mongoose = require('mongoose');
 
@@ -24,9 +23,9 @@ const alunoSchema  = new mongoose.Schema({
     turma : String
 })
 
-const Aluno = mongoose.model('Aluno', alunoSchema);
+const Alunos = mongoose.model('Alunos', alunoSchema);
 
-const Paulo = new Aluno({
+const Paulo = new Alunos({
     matricula: 'rm201',
     nome : 'Paulo',
     idade : 10,
@@ -34,7 +33,9 @@ const Paulo = new Aluno({
 
 })
 
-const Maria = new Aluno({
+Paulo.save()
+
+const Maria = new Alunos({
     matricula: 'rm202',
     nome : 'Maria',
     idade : 12,
@@ -42,10 +43,8 @@ const Maria = new Aluno({
 
 })
 
-
-Paulo.save()
 Maria.save()
 
-Aluno.findOne({nome : 'Maria'}, function(err, Aluno){
+Alunos.findOne({nome : 'Maria'}, function(err, Aluno){
     console.log(Aluno)
 })
