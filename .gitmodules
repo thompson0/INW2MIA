@@ -1,0 +1,3 @@
+[submodule "BancoDeDados"]
+	path = BancoDeDados
+	url = https://github.com/josekaneto/BancoDeDados.git
