@@ -10,8 +10,10 @@
   "author": "Jose",
   "license": "ISC",
   "dependencies": {
+    "install": "^0.13.0",
     "mongoose": "^7.5.0",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "prompt-sync": "^4.2.0"
   },
   "keywords": []
 }
