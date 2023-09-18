@@ -1,0 +1,120 @@
+1  - Criar o banco de dados com um nome relativo ao projeto selecionado para sua criação;
+
+2  - Após a criação do banco criar 3 coleções para este banco conforme, uma chamada cliente, outra referente ao produto ou serviço de sua loja e uma terceira chamada movimento (exemplo loja de moda praia, tabelas a serem criadas clientes, produtospraia, movimento);
+
+3 - execute o comando que lista todas as coleções;
+
+4 - Inserir 1 documento na coleção cliente com no mínimo 5 atributos distintos sendo obrigatórios o atributos _id com o número inteiro 1, e o nome  que vai receber CARLOS SILVA, os demais 3 atributos ficam a sua escolha;
+
+5 - Inserir mais 4 documentos de uma única vez nesta coleção clientes conforme a sequência de _id  e com todos os atributos criados;
+
+6 - Inserir 5 itens na tabela de produtos específicas que você gerou com pelo menos 5 atributos ( neste exemplos seria na produtospraia)
+
+7 - Mostra todos os dados desta coleção cliente e da coleção criada especifica de produtos do seu projeto;
+
+8 - Usando o comando de alteração atualize o nome do CARLOS SILVA para MARCOS PAULO
+
+9 - Delete o último registro das coleções cliente e da coleção de produtos que você criou;
+
+10 - Apague a coleção movimento
+
+No cmd digitar - net start mongodb
+
+No mongosh
+
+1 - use VivaVerde 
+
+2 - db.createCollection("clientes") 
+    db.createCollection("produtosNaturais") 
+    db.createCollection("movimento") 
+
+3 - show collections 
+
+4 - db.clientes.insertOne({
+  	_id: 1,
+  	nome: 'Carlos Silva',
+  	nascimento: '26/09/1989',
+  	cpf: '111.222.333-44',
+  	endereco: 'Av.Lins de Vasconcelos, 164' 
+	
+    })
+
+5 - db.clientes.insertMany([
+	{
+	_id: 2,
+  	nome: 'Maria Silva',
+  	nascimento: '26/10/1989',
+  	cpf: '111.222.333-45',
+  	endereco: 'Av.Lins de Vasconcelos, 134' 
+	},
+	{ 
+	_id: 3,
+  	nome: 'Mario Silva',
+  	nascimento: '26/11/1989',
+  	cpf: '111.222.333-46',
+  	endereco: 'Av.Lins de Vasconcelos, 144' 
+	},
+	{ 
+	_id: 4,
+  	nome: 'José Silva',
+  	nascimento: '26/12/1989',
+  	cpf: '111.222.333-47',
+  	endereco: 'Av.Lins de Vasconcelos, 124'
+	},
+	{
+	_id : 5,
+	nome : "Mariana Silva", 
+	nascimento: '26/01/1989',
+	cpf: '111.222.333-48',
+	endereco: 'Av.Lins de Vasconcelos, 194'
+	}
+])
+
+6 -db.produtosNaturais.insertMany([ 
+	{
+	_id : 1,
+  	nome: "Óleo essencial",
+  	estoque: 100,
+  	valor: 50,
+  	peso: "100ml"
+	},
+	{
+	_id : 2,
+  	nome: "Óleo de pele",
+  	estoque: 150,
+  	valor: 50,
+  	peso: "100ml"
+	},
+	{
+	_id : 3,
+  	nome: "Chá Mate",
+  	estoque: 70,
+  	valor: 20,
+  	peso: "50g"
+	},
+	{
+	_id : 4,
+  	nome: "Cúrcuma",
+  	estoque: 200,
+  	valor: 15,
+  	peso: "20g"
+	},
+	{
+	_id : 5,
+  	nome: "Colágeno",
+  	estoque: 20,
+  	valor: 200,
+  	peso: "250g"
+	}
+])
+
+7 - db.clientes.find()
+    db.produtosNaturais.find()
+
+8 - db.clientes.updateOne({ nome : "Carlos Silva"}, {$set : { nome : "Marcos Paulo"}})
+
+9 - db.clientes.deleteOne({ _id : 5})
+    db.produtosNaturais.deleteOne({ _id : 5})
+
+10 - db.movimento.drop()
+	
